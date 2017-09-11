@@ -7,7 +7,7 @@ int main ()
     scanf("%d",&n);
     printf("Digite um numero para ser o expoente \n");
     scanf("%d",&e);
-	for (i=0;i<e;i++);
+	for (i=0;i<e;i++)
 	{
 	r*=n;
 	}

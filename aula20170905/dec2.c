@@ -4,7 +4,7 @@
 int main ()
 {
 	srand(time(0));
-	int a, n, f=0, f1=0, f2=0, ff=0, r, x, x1;
+	int a, n, f=0, r, x, x1;
 	printf("Digite um dos divisores de 8192 ");
 	scanf("%d",&n);
 	if(n!=0)

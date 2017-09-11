@@ -1,35 +1,40 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-float main ()
+int main ()
 {
-	srand(time(NULL));
-	int a, n, f=0, f1, f2, ff, r, x, x1;
+	srand(time(0));
+	int a, n, f=0, f1=0, f2=0, ff=0, r, x, x1;
 	printf("Digite um dos divisores de 8192 ");
 	scanf("%d",&n);
-	if (8192%n==0)
-		f1=f+1;
+	if(n!=0)
+	{
+	if (8192%n==0 )
+		f=f+1;
 	else
 	{
-		f1=f+0;
+		f=f+0;
 	}
-	printf("Some 101 com o valor %d", x, (1328 + rand()%1361));
+    }
+	x=1328 + (rand()%33);
+	printf("Some 101 com o valor %d", x);
 	scanf("%d",&r);
-	if (r=x+101)
-		f2=f1+1;
+	if (r==x+101)
+		f=f+1;
 	else
 	{
-		f2=f1+0;
+		f=f+0;
 	}
-	printf("Multiplique por 3 o valor %d", x1, (0 + rand()%100));
+	x1=(rand()%100);
+	printf("Multiplique por 3 o valor %d", x1);
     scanf("%d",&a); 
-    if (a=x1*3)
-    	ff=f2+1;
+    if (a==x1*3)
+    	f=f+1;
     else
     {
-    	ff=f2+0;
+    	f=f+0;
     }
-    printf("%d",&ff);	
+    printf("%d",f);	
     printf("pontos\n");
     return 0;
 }

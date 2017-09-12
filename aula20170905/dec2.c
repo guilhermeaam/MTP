@@ -17,7 +17,7 @@ int main ()
 	}
     }
 	x=1328 + (rand()%33);
-	printf("Some 101 com o valor %d", x);
+	printf("Some 101 com o valor %d ", x);
 	scanf("%d",&r);
 	if (r==x+101)
 		f=f+1;
@@ -26,7 +26,7 @@ int main ()
 		f=f+0;
 	}
 	x1=(rand()%100);
-	printf("Multiplique por 3 o valor %d", x1);
+	printf("Multiplique por 3 o valor %d ", x1);
     scanf("%d",&a); 
     if (a==x1*3)
     	f=f+1;
@@ -34,7 +34,7 @@ int main ()
     {
     	f=f+0;
     }
-    printf("%d",f);	
+    printf("%d ",f);	
     printf("pontos\n");
     return 0;
 }

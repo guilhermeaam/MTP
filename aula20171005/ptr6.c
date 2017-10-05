@@ -10,8 +10,7 @@ int main(){
     printf("\nCodigo:\n");
     for(i = 0; i < N/sizeof(int); i++) printf("%d ", varredura[i]);
 	for(i = 0; i < N/sizeof(int); i++)
-       printf("\n%X (hex)",
-              varredura+i, varredura[i],varredura[i]);
+       printf("\n%X (hex)",varredura[i]);
     printf("\n");
     return 0;
 }

@@ -1,24 +1,49 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
+#include <string.h>
+#include <locale.h>
+typedef struct
+{
+  int x, y;
+}ponto;
+
+typedef struct
+{
+  int vertice;
+  ponto Spontos[10000];
+}poligono;
+
+void area(poligono *forma, int vertice){
+	int i, j,det=0, detfinal = 0;
+	for(i=1; i<vertice;i++){
+		det = det+ (((*forma).Spontos[i-1].x*(*forma).Spontos[i].y)-((*forma).Spontos[i-1].y*(*forma).Spontos[i].x));
+	}
+	detfinal = det/2;
+	printf("\nA area e %d", detfinal);
+}
+void centroide(poligono *forma, int vertice){
+	float mediax, mediay , mediafx, mediafy;
+	int i;
+	for(i=0; i<vertice ;i++){
+		mediax = mediax + ((*forma).Spontos[i].x);
+	}
+	for(i=0; i<vertice ;i++){
+		mediay = mediay + ((*forma).Spontos[i].y);
+	}
+	mediafx = mediax/vertice;
+	mediafy = mediay/vertice;
+	printf("\nO centroide e: %.3fx%.3f", mediafx, mediafy);
+}
 int main(){
-	int v, p,i=0,j=0, x,y,a;
-	printf("Entre com o numero de poligonos: ");
-	scanf("%d", &p);
-	while (i<p){
-	printf("Entre com o numero de vertices do poligono %d: ",i+1);
-	scanf("%d", &v);
-	while(j<v){
-	printf("Entre com o x do %d vertice: ",j+1);
-	scanf("%d", &x);
-	printf("Entre com o y do %d vertice: ",j+1);
-	scanf("%d", &y);
-	j++;
-	printf("A area do poligono %d: ",i+1);
-	printf("%d: ",a);
+	int n,i;
+	poligono forma;
+	printf("Insira a quantidade de vertices:\n");
+	scanf("%d", &n);
+	printf("\nInsira as coordenadas de cada vertice:\n");
+	for(i=0; i<n; i++){
+	scanf("%d%d" , &forma.Spontos[i].x, &forma.Spontos[i].y);
 	}
-	j=0;
-	i++;
-	}
+	area(&forma, n);
+	centroide(&forma,n);
 	return 0;
-	}
+}

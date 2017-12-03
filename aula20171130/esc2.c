@@ -1,30 +1,34 @@
 #include <stdio.h>
-#include <time.h>
-#include <string.h>
+#include <stdlib.h>
 
-void colocar (int x, char * algo);
-int main() {
-    srand(time(0));
-   	char nome_arquivo[256];
-    char algo [256];
-    int x;
-    printf("Quantidade de numeros aleatorios: \n");
-    printf("Obs: Os numeros gerados sao entre 0 e 100. \n");
-    fscanf(stdin, "%d", &x);
-    /*printf("Entre com arquivo [sem espacos]: ");
-	scanf("%s", nome_arquivo);*/
-	colocar (x, algo);
-    return 0;
+typedef
+struct stponto {
+	int x, y;
 }
-void colocar (int x, char * algo){
-    int i;
-    int y = 0;
-    FILE * arquivo;
-    arquivo = fopen("arquivo.txt", "wb");
-    for (i=0; i<x; i++)
-    {
-        y = rand()%99+1;
-        fprintf(arquivo, "%d\n", y);
-    }
-    fclose(arquivo);
+ponto;
+
+void preenche(int n, ponto * p) {
+	int i;
+	for (i=0; i < n; i++){
+		printf("Ponto: %d\n", i+1);
+		scanf("%d", &((p+i)->x));
+		scanf("%d", &((p+i)->y));
+	}
+}
+
+int main(){
+	FILE * arquivo;
+	int n; ponto * pontos;
+	char nome[100];
+	printf("\n QUANTIDADE DE PONTOS : \n");
+	scanf("%d", &n);
+	pontos = (ponto *) malloc(n*sizeof(ponto));
+	preenche(n, pontos);
+	printf("\n NOME DO ARQUIVO : \n ");
+	scanf("%s", nome);
+	arquivo = fopen (nome, "wb");
+	fwrite(pontos, 2*sizeof(int), n, arquivo);
+	fclose(arquivo);
+	free(pontos);
+	return 0;
 }

@@ -39,7 +39,7 @@ int main(){
 	poligono forma;
 	printf("Insira a quantidade de vertices:\n");
 	scanf("%d", &n);
-	printf("\nInsira as coordenadas de cada vertice:\n");
+	printf("\nInsira as coordenadas de cada vertice: \n");
 	for(i=0; i<n; i++){
 	scanf("%d%d" , &forma.Spontos[i].x, &forma.Spontos[i].y);
 	}

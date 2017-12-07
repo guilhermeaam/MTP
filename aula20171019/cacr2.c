@@ -22,7 +22,7 @@ void raizes(int x, int a, int b){
  		printf("NAN,NAN\n");
  	}
  }
-void main(){
+int main(){
 	float a,b,c,raiz1,raiz2,x;
 	printf("Digite um numero para substituir a, b e c, na operacao (y = ax*x + bx + c). \n");
 	scanf("%f %f %f", &a, &b, &c);
